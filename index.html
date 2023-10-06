@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог</title>
+  <link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <h1>Каталог игр</h1>
+      </div>
+    </div>
+  </header>
+
+  <div class="filters">
+    <div class="container">
+      <div class="filters__inner">
+        <div class="filters__title title">
+          <h2>Фильтры</h2>
+        </div>
+        <div class="filters__genre filter">
+          <h3 class="filter__name">Жанр</h3>
+          <ul class="filter__list">
+            <li class="filter__item"><button class="" data-id="shooter">Шутеры</button></li>
+            <li class="filter__item"><button class="" data-id="moba">MOBA</button></li>
+            <li class="filter__item"><button class="" data-id="racing">Гонки</button></li>
+          </ul>
+        </div>
+        <div class="filters__platform filter">
+          <h3 class="filter__name">Платформа</h3>
+          <ul class="filter__list">
+            <li class="filter__item" data-id="pc"><button class="">ПК</button></li>
+            <li class="filter__item" data-id="ps"><button class="">Playstation</button></li>
+            <li class="filter__item" data-id="xbox"><button class="">Xbox</button></li>
+          </ul>
+        </div>
+        <div class="filters__developer filter">
+          <h3 class="filter__name">Разработчик</h3>
+          <ul class="filter__list">
+            <li class="filter__item" data-id="valve"><button class="">Valve</button></li>
+            <li class="filter__item" data-id="microsoft"><button class="">Microsoft</button></li>
+            <li class="filter__item" data-id="respawn"><button class="">Respawn</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="games">
+    <div class="container">
+      <div class="games__inner">
+        <div class="games__title title">
+          <h2>Игры</h2>
+        </div>
+        <div class="games__inner-list">
+          <div class="games__item game shooter">
+            <div class="game__image"><img src="./images/apex.jpg" alt=""></div>
+            <div class="game__name">Apex Legends</div>
+            <div class="game__parameters">
+              <span class="game__parameters-genre">Шутер</span>
+              <span class="game__parameters-platform">ПК</span>
+              <span class="game__parameters-developer">Respawn</span>
+            </div>
+          </div>
+          <div class="games__item game shooter">
+            <div class="game__image"><img src="./images/cs2.jpg" alt=""></div>
+            <div class="game__name">Counter-Strike 2</div>
+            <div class="game__parameters">
+              <span class="game__parameters-genre">Шутер</span>
+              <span class="game__parameters-platform">ПК</span>
+              <span class="game__parameters-developer">Valve</span>
+            </div>
+          </div>
+          <div class="games__item game racing">
+            <div class="game__image"><img src="./images/forza5.jpg" alt=""></div>
+            <div class="game__name">Forza Horizon 5</div>
+            <div class="game__parameters">
+              <span class="game__parameters-genre">Гонки</span>
+              <span class="game__parameters-platform">Xbox</span>
+              <span class="game__parameters-developer">Microsoft</span>
+            </div>
+          </div>
+          <div class="games__item game shooter">
+            <div class="game__image"><img src="./images/titanfall2.jpg" alt=""></div>
+            <div class="game__name">Titanfall 2</div>
+            <div class="game__parameters">
+              <span class="game__parameters-genre">Шутер</span>
+              <span class="game__parameters-platform">Playstation</span>
+              <span class="game__parameters-developer">Respawn</span>
+            </div>
+          </div>
+          <div class="games__item game moba">
+            <div class="game__image"><img src="./images/dota2.jpg" alt=""></div>
+            <div class="game__name">DOTA 2</div>
+            <div class="game__parameters">
+              <span class="game__parameters-genre">MOBA</span>
+              <span class="game__parameters-platform">ПК</span>
+              <span class="game__parameters-developer">Valve</span>
+            </div>
+          </div>
+          <div class="games__item game racing">
+            <div class="game__image"><img src="./images/forza4.jpg" alt=""></div>
+            <div class="game__name">Forza Horizon 4</div>
+            <div class="game__parameters">
+              <span class="game__parameters-genre">Шутер</span>
+              <span class="game__parameters-platform">Гонки</span>
+              <span class="game__parameters-developer">Microsoft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>
