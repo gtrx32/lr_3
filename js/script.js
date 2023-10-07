@@ -1,17 +1,51 @@
-const list = document.querySelector('.filter__list')
-const games = document.querySelectorAll('.game')
+const filters = {
+  genre: 'all',
+  platform: 'all',
+  developer: 'all'
+};
 
-list.addEventListener('click', event => {
-  if (event.target.tagName !== 'BUTTON') return false;
+function updateFilters(filterKey, filterValue) {
+  filters[filterKey] = filterValue;
+  applyFilters();
+}
 
-  let filterClass = event.target.dataset['id'];
+function applyFilters() {
 
-  console.log(event.target.dataset['id'])
+  var items = document.querySelectorAll('.game');
 
-  games.forEach(elem => {
-    elem.classList.remove('hide');
-    if (!elem.classList.contains(filterClass)) {
-      elem.classList.add('hide');
+  items.forEach(function (item) {
+    var itemGenre = item.getAttribute('data-genre');
+    var itemPlatform = item.getAttribute('data-platform');
+    var itemDeveloper = item.getAttribute('data-developer');
+
+    var genreMatch = (filters.genre === 'all' || filters.genre === itemGenre);
+    var platformMatch = (filters.platform === 'all' || filters.platform === itemPlatform);
+    var developerMatch = (filters.developer === 'all' || filters.developer === itemDeveloper);
+
+    if (genreMatch && platformMatch && developerMatch) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
     }
-  })
-})
+  });
+}
+
+const filtersList = document.querySelector('.filters__inner');
+
+filtersList.addEventListener('click', ({ target: { tagName, dataset, classList } }) => {
+  if (tagName !== 'BUTTON') return false;
+
+  let filterKey = Object.keys(dataset)[0];
+  let filterValue = dataset[filterKey];
+
+  if (classList.contains('active')) {
+    classList.remove('active');
+    filterValue = 'all';
+  } else {
+    document.querySelectorAll(`.filters__inner button[data-${filterKey}]`).forEach(button => {
+      button.classList.remove('active')
+    });
+    classList.add('active');
+  }
+  updateFilters(filterKey, filterValue);
+});

@@ -3,13 +3,13 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 16px;
-  font-family: 'Neutral Face';
+  font-family: "Neutral Face";
   letter-spacing: 2px;
 }
 
 body {
   background: rgb(26, 27, 38);
-  background: linear-gradient(90deg, rgba(26, 27, 38, 1) 0%, rgb(51, 54, 83) 50%, rgba(26, 27, 38, 1) 100%);
+  background: linear-gradient(90deg, rgb(26, 27, 38) 0%, rgb(51, 54, 83) 50%, rgb(26, 27, 38) 100%);
 }
 
 .container {
@@ -81,10 +81,6 @@ body {
   background: #eba945;
 }
 
-.empty {
-  background: #4b4b4b;
-}
-
 .filter__list li button:hover {
   background: #eba945;
 }
@@ -95,31 +91,65 @@ body {
 
 .games__inner-list {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-}
-
-.hide {
-  display: none;
+  row-gap: 50px;
+  column-gap: 20px;
 }
 
 .games__item {
   flex: 0 0 33%;
+  max-width: 413px;
   color: #fff;
-  margin-bottom: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (any-hover: hover) {
+  .games__item:hover .game__info {
+    opacity: 1;
+    transform: translate(0, 0%);
+  }
 }
 
 .game__image {
   width: 100%;
   height: 600px;
   overflow: hidden;
+  -o-object-fit: cover;
   object-fit: cover;
+  position: relative;
+  cursor: pointer;
 }
 
 .game__image img {
+  -o-object-fit: cover;
   object-fit: cover;
   width: 100%;
   height: 100%;
+  transition: all 0.3s ease 0s;
+}
+
+.game__image::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.27);
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  z-index: 10;
+  opacity: 0;
+}
+
+@media (any-hover: hover) {
+  .game__image:hover::before {
+    opacity: 1;
+  }
+
+  .game__image:hover img {
+    transform: scale(1.05);
+  }
 }
 
 .game__name {
@@ -133,4 +163,18 @@ body {
   justify-content: center;
   gap: 20px;
   padding: 10px;
+}
+
+.game__info {
+  position: absolute;
+  bottom: 0px;
+  padding: 20px 0px;
+  width: 100%;
+  background: rgba(27, 27, 27, 0.372);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  opacity: 1;
+  transition: all 0.3s ease 0s;
+  transform: translate(0, 100%);
+  will-change: transform;
 }
