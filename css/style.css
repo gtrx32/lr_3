@@ -81,8 +81,14 @@ body {
   background: #eba945;
 }
 
+.disabled {
+  background-color: #444;
+  cursor: not-allowed !important;
+}
+
 .filter__list li button:hover {
-  background: #eba945;
+  color: #aaa;
+  cursor: pointer;
 }
 
 .games__inner {
