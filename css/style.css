@@ -81,7 +81,7 @@ body {
   background: #eba945;
 }
 
-.disabled {
+button:disabled {
   background-color: #444;
   cursor: not-allowed !important;
 }

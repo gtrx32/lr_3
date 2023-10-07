@@ -1,18 +1,17 @@
-const filters = {
-  genre: 'all',
-  platform: 'all',
-  developer: 'all'
-};
+let filters = {};
 
-const newfilters = {
-  genre: 'all',
-  platform: 'all',
-  developer: 'all'
-};
+if (window.localStorage.getItem('filters')) {
+  filters = JSON.parse(window.localStorage.getItem('filters'));
+  applyFilters();
+} else {
+  filters = {
+    genre: 'all',
+    platform: 'all',
+    developer: 'all',
+  };
+}
 
-const filtersList = document.querySelector('.filters__inner');
-
-filtersList.addEventListener('click', ({ target: { tagName, dataset, classList } }) => {
+document.querySelector('.filters__inner').addEventListener('click', ({ target: { tagName, dataset, classList } }) => {
   if (tagName !== 'BUTTON') return false;
 
   let filterKey = Object.keys(dataset)[0];
@@ -34,6 +33,8 @@ filtersList.addEventListener('click', ({ target: { tagName, dataset, classList }
 
 function updateFilters(filterKey, filterValue) {
   filters[filterKey] = filterValue;
+
+  window.localStorage.setItem('filters', JSON.stringify(filters));
   applyFilters();
 }
 
@@ -41,8 +42,7 @@ function applyFilters() {
   var items = document.querySelectorAll('.game');
 
   items.forEach(function (item) {
-    if (checkMatches(item, filters)) item.style.display = 'block';
-    else item.style.display = 'none';
+    item.style.display = checkMatches(item, filters) ? 'block' : 'none';
   });
 
   availableButtons(items);
@@ -55,27 +55,26 @@ function availableButtons(items) {
     empty = true;
 
     items.forEach(function (item) {
-      newfilters['genre'] = filters['genre'];
-      newfilters['platform'] = filters['platform'];
-      newfilters['developer'] = filters['developer'];
+      const newfilters = { ...filters };
       newfilters[Object.keys(button.dataset)[0]] = button.dataset[Object.keys(button.dataset)[0]];
       if (checkMatches(item, newfilters)) empty = false;
     });
 
-    if (empty) {
-      button.classList.add('disabled');
-      button.disabled = true;
-    }
-    else {
-      button.classList.remove('disabled');
-      button.disabled = false;
+    button.disabled = empty;
+  });
+
+  Object.keys(filters).forEach(filter => {
+    const btn = document.querySelector(`.filters__inner button[data-${filter}="${filters[filter]}"]`);
+    if (btn) {
+      btn.classList.add('active');
     }
   });
 }
 
-function checkMatches(item, filters) {
-  if ((filters.genre === 'all' || filters.genre === item.getAttribute('data-genre')) &&
-    (filters.platform === 'all' || filters.platform === item.getAttribute('data-platform')) &&
-    (filters.developer === 'all' || filters.developer === item.getAttribute('data-developer'))) return true;
-  else return false;
+function checkMatches(item, { genre, platform, developer }) {
+  return (
+    (genre === 'all' || genre === item.getAttribute('data-genre')) &&
+    (platform === 'all' || platform === item.getAttribute('data-platform')) &&
+    (developer === 'all' || developer === item.getAttribute('data-developer'))
+  );
 }
