@@ -11,126 +11,230 @@
 
 <body>
 
-  <header class="header">
-    <div class="container">
-      <div class="header__inner">
-        <h1>Каталог игр</h1>
+  <div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <h1>Каталог игр</h1>
+        </div>
+      </div>
+    </header>
+
+    <div class="filters">
+      <div class="container">
+        <div class="filters__inner">
+          <div class="filters__title title">
+            <h2>Фильтры</h2>
+          </div>
+          <div class="filters__genre filter">
+            <h3 class="filter__name">Жанр</h3>
+            <ul class="filter__list">
+              <li class="filter__item"><button class="button" data-genre="action">Экшн</button></li>
+              <li class="filter__item"><button class="button" data-genre="shooter">Шутер</button></li>
+              <li class="filter__item"><button class="button" data-genre="strategy">Стратегия</button></li>
+            </ul>
+          </div>
+          <div class="filters__platform filter">
+            <h3 class="filter__name">Платформа</h3>
+            <ul class="filter__list">
+              <li class="filter__item"><button class="button" data-platform="pc">ПК</button></li>
+              <li class="filter__item"><button class="button" data-platform="playstation">Playstation</button></li>
+              <li class="filter__item"><button class="button" data-platform="xbox">Xbox</button></li>
+            </ul>
+          </div>
+          <div class="filters__developer filter">
+            <h3 class="filter__name">Разработчик</h3>
+            <ul class="filter__list">
+              <li class="filter__item"><button class="button" data-developer="ubisoft">Ubisoft</button></li>
+              <li class="filter__item"><button class="button" data-developer="ea">EA</button></li>
+              <li class="filter__item"><button class="button" data-developer="blizzard">Blizzard</button></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </header>
 
-  <div class="filters">
-    <div class="container">
-      <div class="filters__inner">
-        <div class="filters__title title">
-          <h2>Фильтры</h2>
-        </div>
-        <div class="filters__genre filter">
-          <h3 class="filter__name">Жанр</h3>
-          <ul class="filter__list">
-            <li class="filter__item"><button class="button" data-genre="shooter">Шутеры</button></li>
-            <li class="filter__item"><button class="button" data-genre="moba">MOBA</button></li>
-            <li class="filter__item"><button class="button" data-genre="racing">Гонки</button></li>
-          </ul>
-        </div>
-        <div class="filters__platform filter">
-          <h3 class="filter__name">Платформа</h3>
-          <ul class="filter__list">
-            <li class="filter__item"><button class="button" data-platform="pc">ПК</button></li>
-            <li class="filter__item"><button class="button" data-platform="ps">Playstation</button></li>
-            <li class="filter__item"><button class="button" data-platform="xbox">Xbox</button></li>
-          </ul>
-        </div>
-        <div class="filters__developer filter">
-          <h3 class="filter__name">Разработчик</h3>
-          <ul class="filter__list">
-            <li class="filter__item"><button class="button" data-developer="valve">Valve</button></li>
-            <li class="filter__item"><button class="button" data-developer="microsoft">Microsoft</button></li>
-            <li class="filter__item"><button class="button" data-developer="respawn">Respawn</button></li>
-          </ul>
+    <div class="games">
+      <div class="container">
+        <div class="games__inner">
+          <div class="games__title title">
+            <h2>Игры</h2>
+          </div>
+          <div class="games__inner-list">
+
+            <div class="games__item game" data-genre="shooter" data-platform="pc" data-developer="ea">
+              <div class="game__image"><img src="./images/titanfall2.jpg" alt=""></div>
+              <div class="game__info">
+                <div class="game__name">Titanfall 2</div>
+                <div class="game__parameters">
+                  <span class="game__parameters-genre">Шутер</span>
+                  <span class="game__parameters-platform">ПК</span>
+                  <span class="game__parameters-developer">EA</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="games__item game" data-genre="strategy" data-platform="playstation" data-developer="ubisoft">
+              <div class="game__image"><img src="./images/anno.jpg" alt=""></div>
+              <div class="game__info">
+                <div class="game__name">Anno</div>
+                <div class="game__parameters">
+                  <span class="game__parameters-genre">Стратегия</span>
+                  <span class="game__parameters-platform">Playstation</span>
+                  <span class="game__parameters-developer">Ubisoft</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="games__item game" data-genre="shooter" data-platform="pc" data-developer="ubisoft">
+              <div class="game__image"><img src="./images/r6.jpg" alt=""></div>
+              <div class="game__info">
+                <div class="game__name">Rainbow Six Siege</div>
+                <div class="game__parameters">
+                  <span class="game__parameters-genre">Шутер</span>
+                  <span class="game__parameters-platform">ПК</span>
+                  <span class="game__parameters-developer">Ubisoft</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="games__item game" data-genre="shooter" data-platform="pc" data-developer="ea">
+              <div class="game__image"><img src="./images/apex.jpg" alt=""></div>
+              <div class="game__info">
+                <div class="game__name">Apex Legends</div>
+                <div class="game__parameters">
+                  <span class="game__parameters-genre">Шутер</span>
+                  <span class="game__parameters-platform">ПК</span>
+                  <span class="game__parameters-developer">EA</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="games__item game" data-genre="action" data-platform="playstation" data-developer="ubisoft">
+              <div class="game__image"><img src="./images/creed.jpg" alt=""></div>
+              <div class="game__info">
+                <div class="game__name">Assassin’s Creed Mirage</div>
+                <div class="game__parameters">
+                  <span class="game__parameters-genre">Экшн</span>
+                  <span class="game__parameters-platform">Playstation</span>
+                  <span class="game__parameters-developer">Ubisoft</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="games__item game" data-genre="shooter" data-platform="pc" data-developer="ubisoft">
+              <div class="game__image"><img src="./images/ghost.jpg" alt=""></div>
+              <div class="game__info">
+                <div class="game__name">Ghost Recon Phantoms</div>
+                <div class="game__parameters">
+                  <span class="game__parameters-genre">Шутер</span>
+                  <span class="game__parameters-platform">ПК</span>
+                  <span class="game__parameters-developer">Ubisoft</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="games__item game" data-genre="strategy" data-platform="xbox" data-developer="blizzard">
+              <div class="game__image"><img src="./images/starcraft.jpg" alt=""></div>
+              <div class="game__info">
+                <div class="game__name">StarCraft II</div>
+                <div class="game__parameters">
+                  <span class="game__parameters-genre">Стратегия</span>
+                  <span class="game__parameters-platform">Xbox</span>
+                  <span class="game__parameters-developer">Blizzard</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="games__item game" data-genre="action" data-platform="playstation" data-developer="ea">
+              <div class="game__image"><img src="./images/b2042.webp" alt=""></div>
+              <div class="game__info">
+                <div class="game__name">Battlefield 2042</div>
+                <div class="game__parameters">
+                  <span class="game__parameters-genre">Экшн</span>
+                  <span class="game__parameters-platform">Playstation</span>
+                  <span class="game__parameters-developer">EA</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="games__item game" data-genre="shooter" data-platform="pc" data-developer="blizzard">
+              <div class="game__image"><img src="./images/overwatch.jpg" alt=""></div>
+              <div class="game__info">
+                <div class="game__name">Overwatch</div>
+                <div class="game__parameters">
+                  <span class="game__parameters-genre">Шутер</span>
+                  <span class="game__parameters-platform">ПК</span>
+                  <span class="game__parameters-developer">Blizzard</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="games__item game" data-genre="action" data-platform="playstation" data-developer="ea">
+              <div class="game__image"><img src="./images/mirrorsedge.jpg" alt=""></div>
+              <div class="game__info">
+                <div class="game__name">Mirror's Edge</div>
+                <div class="game__parameters">
+                  <span class="game__parameters-genre">Экшн</span>
+                  <span class="game__parameters-platform">Playstation</span>
+                  <span class="game__parameters-developer">EA</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="games__item game" data-genre="action" data-platform="pc" data-developer="blizzard">
+              <div class="game__image"><img src="./images/wow.jpg" alt=""></div>
+              <div class="game__info">
+                <div class="game__name">World of Warcraft</div>
+                <div class="game__parameters">
+                  <span class="game__parameters-genre">Экшн</span>
+                  <span class="game__parameters-platform">ПК</span>
+                  <span class="game__parameters-developer">Blizzard</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="games__item game" data-genre="strategy" data-platform="xbox" data-developer="ea">
+              <div class="game__image"><img src="./images/simcity.jpg" alt=""></div>
+              <div class="game__info">
+                <div class="game__name">SimCity</div>
+                <div class="game__parameters">
+                  <span class="game__parameters-genre">Стратегия</span>
+                  <span class="game__parameters-platform">Xbox</span>
+                  <span class="game__parameters-developer">EA</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="games__item game" data-genre="strategy" data-platform="xbox" data-developer="ubisoft">
+              <div class="game__image"><img src="./images/settlers.jpg" alt=""></div>
+              <div class="game__info">
+                <div class="game__name">The Settlers</div>
+                <div class="game__parameters">
+                  <span class="game__parameters-genre">Стратегия</span>
+                  <span class="game__parameters-platform">Xbox</span>
+                  <span class="game__parameters-developer">Ubisoft</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="games__item game" data-genre="strategy" data-platform="pc" data-developer="blizzard">
+              <div class="game__image"><img src="./images/heartstone.jpg" alt=""></div>
+              <div class="game__info">
+                <div class="game__name">Heartstone</div>
+                <div class="game__parameters">
+                  <span class="game__parameters-genre">Стратегия</span>
+                  <span class="game__parameters-platform">ПК</span>
+                  <span class="game__parameters-developer">Blizzard</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="games">
-    <div class="container">
-      <div class="games__inner">
-        <div class="games__title title">
-          <h2>Игры</h2>
-        </div>
-        <div class="games__inner-list">
-          <div class="games__item game" data-genre="shooter" data-platform="pc" data-developer="respawn">
-            <div class="game__image"><img src="./images/apex.jpg" alt=""></div>
-            <div class="game__info">
-              <div class="game__name">Apex Legends</div>
-              <div class="game__parameters">
-                <span class="game__parameters-genre">Шутер</span>
-                <span class="game__parameters-platform">ПК</span>
-                <span class="game__parameters-developer">Respawn</span>
-              </div>
-            </div>
-          </div>
-          <div class="games__item game" data-genre="shooter" data-platform="pc" data-developer="valve">
-            <div class="game__image"><img src="./images/cs2.jpg" alt=""></div>
-            <div class="game__info">
-              <div class="game__name">Counter-Strike 2</div>
-              <div class="game__parameters">
-                <span class="game__parameters-genre">Шутер</span>
-                <span class="game__parameters-platform">ПК</span>
-                <span class="game__parameters-developer">Valve</span>
-              </div>
-            </div>
-          </div>
-          <div class="games__item game" data-genre="racing" data-platform="xbox" data-developer="microsoft">
-            <div class="game__image"><img src="./images/forza5.jpg" alt=""></div>
-            <div class="game__info">
-              <div class="game__name">Forza Horizon 5</div>
-              <div class="game__parameters">
-                <span class="game__parameters-genre">Гонки</span>
-                <span class="game__parameters-platform">Xbox</span>
-                <span class="game__parameters-developer">Microsoft</span>
-              </div>
-            </div>
-          </div>
-          <div class="games__item game" data-genre="shooter" data-platform="ps" data-developer="respawn">
-            <div class="game__image"><img src="./images/titanfall2.jpg" alt=""></div>
-            <div class="game__info">
-              <div class="game__name">Titanfall 2</div>
-              <div class="game__parameters">
-                <span class="game__parameters-genre">Шутер</span>
-                <span class="game__parameters-platform">Playstation</span>
-                <span class="game__parameters-developer">Respawn</span>
-              </div>
-            </div>
-          </div>
-          <div class="games__item game" data-genre="moba" data-platform="pc" data-developer="valve">
-            <div class="game__image"><img src="./images/dota2.jpg" alt=""></div>
-            <div class="game__info">
-              <div class="game__name">DOTA 2</div>
-              <div class="game__parameters">
-                <span class="game__parameters-genre">MOBA</span>
-                <span class="game__parameters-platform">ПК</span>
-                <span class="game__parameters-developer">Valve</span>
-              </div>
-            </div>
-          </div>
-          <div class="games__item game" data-genre="racing" data-platform="xbox" data-developer="microsoft">
-            <div class="game__image"><img src="./images/forza4.jpg" alt=""></div>
-            <div class="game__info">
-              <div class="game__name">Forza Horizon 4</div>
-              <div class="game__parameters">
-                <span class="game__parameters-genre">Гонки</span>
-                <span class="game__parameters-platform">Xbox</span>
-                <span class="game__parameters-developer">Microsoft</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script src="./js/script.js"></script>
 
 </body>
